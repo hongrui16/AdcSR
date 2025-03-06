@@ -77,12 +77,12 @@ chmod +x train.sh train_debug.sh test_debug.sh evaluate_debug.sh
 3. **Download model weights** (`net_params_200.pkl`) from the same link and place it in `./weight/`.  
 4. **Run the test script** (or modify and execute `./test_debug.sh` for convenience):  
    ```bash
-   python test.py --epoch 200 --LR_dir=path_to_LR_images --SR_dir=path_to_SR_images
+   python test.py --epoch=200 --LR_dir=path_to_LR_images --SR_dir=path_to_SR_images
    ```
    The results will be saved in `path_to_SR_images`.
 5. **Test Your Own Images**:
-   - Place your **low-resolution (LR)** images into `./testset/custom/`.
-   - Run the same command with `--LR_dir=./testset/custom/`, and the model will perform **x4 super-resolution**.
+   - Place your **low-resolution (LR)** images into `./testset/xxx/`.
+   - Run the command with `--LR_dir=./testset/xxx/`, and the model will perform **x4 super-resolution**.
 
 ## 🍭 Evaluation
 
