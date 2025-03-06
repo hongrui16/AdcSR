@@ -52,15 +52,18 @@ pip install -r requirements.txt
 chmod +x train.sh train_debug.sh test_debug.sh evaluate_debug.sh
 ```
 
-## Inference
+## Test
 
-1. **Download the testsets** (`DIV2K-Val.zip`, `DRealSR.zip`, `RealSR.zip`) from [Google Drive](https://drive.google.com/drive/folders/1JBOxTOOWi6ietCRTTbhjg8ojHrals4dh?usp=sharing) or [PKU Disk](https://disk.pku.edu.cn/link/AAD499197CBF054392BC4061F904CC4026)  
+1. **Download the testsets** (`DIV2K-Val.zip`, `DRealSR.zip`, `RealSR.zip`) from [Google Drive](https://drive.google.com/drive/folders/1JBOxTOOWi6ietCRTTbhjg8ojHrals4dh?usp=sharing) or [PKU Disk](https://disk.pku.edu.cn/link/AAD499197CBF054392BC4061F904CC4026).
 2. **Unzip** these datasets into `./testset/`, ensuring file paths like `./testset/DIV2K-Val/LR/xxx.png` and `./testset/DIV2K-Val/HR/xxx.png`, etc.  
 3. **Download model weights** (`net_params_200.pkl`) from the same link and place it under `./weight/`.
 4. **Run the test script** (or modify and execute `./test_debug.sh` for convenience):  
    ```bash
    python test.py --epoch 200 --LR_dir path_to_LR_images --SR_dir path_to_SR_images
    ```
+5. **Testing Your Own Images**:  
+   - You can also place your own **Low-Resolution (LR)** images into `./testset/xxx/`.  
+   - Run the same command with `--LR_dir ./testset/xxx/`, and the model will perform **x4 super-resolution** on your images.
 
 ## Evaluation
 **Run the evaluation script** (or modify and execute `./evaluate_debug.sh` for convenience):  
