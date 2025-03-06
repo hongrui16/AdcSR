@@ -40,6 +40,12 @@
 
 <img src="figs/method.png" alt="method" />
 
+## Visual Results
+
+## Comparison with State-of-the-Arts
+
+<img src="figs/comp.png" alt="comp" />
+
 ## Installation
 
 ```shell
@@ -59,11 +65,11 @@ chmod +x train.sh train_debug.sh test_debug.sh evaluate_debug.sh
 3. **Download model weights** (`net_params_200.pkl`) from the same link and place it under `./weight/`.
 4. **Run the test script** (or modify and execute `./test_debug.sh` for convenience):  
    ```bash
-   python test.py --epoch 200 --LR_dir path_to_LR_images --SR_dir path_to_SR_images
+   python test.py --epoch 200 --LR_dir=path_to_LR_images --SR_dir=path_to_SR_images
    ```
 5. **Testing Your Own Images**:  
    - You can also place your own **Low-Resolution (LR)** images into `./testset/xxx/`.  
-   - Run the same command with `--LR_dir ./testset/xxx/`, and the model will perform **x4 super-resolution** on your images.
+   - Run the same command with `--LR_dir=testset/xxx/`, and the model will perform **x4 super-resolution** on your images.
 
 ## Evaluation
 **Run the evaluation script** (or modify and execute `./evaluate_debug.sh` for convenience):  
@@ -88,10 +94,10 @@ This repo provides the code for **Stage 2** training (adversarial distillation).
 If you find our work or code helpful, please cite the following paper:
 
 ```latex
-@article{chen2025invertible,
-  title={Invertible Diffusion Models for Compressed Sensing},
-  author={Chen, Bin and Zhang, Zhenyu and Li, Weiqi and Zhao, Chen and Yu, Jiwen and Zhao, Shijie and Chen, Jie and Zhang, Jian},
-  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  year={2025},
+@inproceedings{chen2025adversarial,
+  title={Adversarial Diffusion Compression for Real-World Image Super-Resolution},
+  author={Chen, Bin and Li, Gehui and Wu, Rongyuan and Zhang, Xindong and Chen, Jie and Zhang, Jian and Zhang, Lei},
+  booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
+  year={2025}
 }
 ```
