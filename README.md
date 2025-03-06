@@ -14,7 +14,7 @@ and [Lei Zhang](https://www4.comp.polyu.edu.hk/~cslzhang/)<sup>2,3</sup>
 
 <sup>*</sup> Equal Contribution. <sup>†</sup> Corresponding Authors.
 
-:star: If AdcSR is helpful to you, please help star this repo. Thanks! :hugs:
+:star: If AdcSR is helpful to you, please star this repo. Thanks! :hugs:
 
 ## Overview
 
