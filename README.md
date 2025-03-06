@@ -49,7 +49,36 @@ conda create -n AdcSR python=3.10
 conda activate AdcSR
 pip install --upgrade pip
 pip install -r requirements.txt
+chmod +x train.sh train_debug.sh test_debug.sh evaluate_debug.sh
 ```
+
+## Inference
+
+1. **Download the testsets** (`DIV2K-Val.zip`, `DRealSR.zip`, `RealSR.zip`) from [Google Drive](https://drive.google.com/drive/folders/1JBOxTOOWi6ietCRTTbhjg8ojHrals4dh?usp=sharing) or [PKU Disk](https://disk.pku.edu.cn/link/AAD499197CBF054392BC4061F904CC4026)  
+2. **Unzip** these datasets into `./testset/`, ensuring file paths like `./testset/DIV2K-Val/LR/xxx.png` and `./testset/DIV2K-Val/HR/xxx.png`, etc.  
+3. **Download model weights** (`net_params_200.pkl`) from the same link and place it under `./weight/`.
+4. **Run the test script** (or modify and execute `./test_debug.sh` for convenience):  
+   ```bash
+   python test.py --epoch 200 --LR_dir path_to_LR_images --SR_dir path_to_SR_images
+   ```
+
+## Evaluation
+**Run the evaluation script** (or modify and execute `./evaluate_debug.sh` for convenience):  
+```bash
+python evaluate.py --HR_dir=path_to_HR_images --SR_dir=path_to_SR_images
+```
+
+## Train
+
+This repo provides the code for **Stage 2** training (adversarial distillation). For **Stage 1** (pretraining the channel-pruned VAE decoder), please refer to our paper and use the [Latent Diffusion Models](https://github.com/CompVis/latent-diffusion) repo.
+
+1. **Download pretrained model weights** (`DAPE.pth`, `halfDecoder.ckpt`, `osediff.pkl`, `ram_swin_large_14m.pth`) from [Google Drive](https://drive.google.com/drive/folders/1JBOxTOOWi6ietCRTTbhjg8ojHrals4dh?usp=sharing) or [PKU Disk](https://disk.pku.edu.cn/link/AAD499197CBF054392BC4061F904CC4026), and place them in `./weight/pretrained/`.
+2. **Download the [LSDIR](https://huggingface.co/ofsoundof/LSDIR) dataset** and store it in your preferred path.
+3. **Update the training dataset path** `dataroot_gt: path_to_HR_images_of_LSDIR` in `config.yml` to match the path of LSDIR.
+4. **Run the training script** (or modify and execute `./train.sh` or `./train_debug.sh` for convenience):
+   ```bash
+   CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.run --nproc_per_node=8 --master_port=23333 train.py
+   ```
 
 ## Citation
 
