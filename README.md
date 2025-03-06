@@ -20,11 +20,11 @@
 
 ### Highlights
 
-- **Adversarial Diffusion Compression (ADC).** We remove and prune redundant modules from a one-step diffusion network and then perform adversarial distillation to retain generation capability despite reduced capacity.
-- **Real-Time [SD](https://huggingface.co/stabilityai/stable-diffusion-2-1)-Based Image Super-Resolution.** AdcSR can super-resolve a 128×128 low-resolution image to a 512×512 output **in just 0.03 seconds** on an A100 GPU.
+- **Adversarial Diffusion Compression (ADC).** We remove and prune redundant modules from a one-step diffusion network [OSEDiff](https://github.com/cswry/OSEDiff) and then perform adversarial distillation to retain generation capability despite reduced capacity.
+- **Real-Time [Stable Diffusion](https://huggingface.co/stabilityai/stable-diffusion-2-1)-Based Image Super-Resolution.** AdcSR can super-resolve a 128×128 low-resolution image to a 512×512 output **in just 0.03 seconds** on an A100 GPU.
 - **Competitive Visual Quality.** Despite its significantly lower complexity (74% fewer parameters vs. [OSEDiff](https://github.com/cswry/OSEDiff)), AdcSR achieves **competitive visual quality and metrics** (PSNR, SSIM, LPIPS, DISTS, NIQE, MUSIQ, etc.) across multiple synthetic and real-world benchmarks.
 
-### Architecture
+### Framework
 
 1. Structural Compression
    - **Removable modules** (VAE encoder, textual prompt extractor, cross-attention, time embeddings) are removed.
@@ -39,6 +39,17 @@
    2. **Adversarial Distillation** in the feature space to align the compressed network's features with both the teacher (e.g., [OSEDiff](https://github.com/cswry/OSEDiff)) and ground truth images.
 
 <img src="figs/method.png" alt="method" />
+
+## Installation
+
+```shell
+git clone https://github.com/Guaishou74851/AdcSR
+cd AdcSR
+conda create -n AdcSR python=3.10
+conda activate AdcSR
+pip install --upgrade pip
+pip install -r requirements.txt
+```
 
 ## Citation
 
