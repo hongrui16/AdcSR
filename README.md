@@ -20,7 +20,7 @@
 
 ### Highlights
 
-- **Adversarial Diffusion Compression (ADC).** We remove and prune redundant modules from a one-step diffusion network [OSEDiff](https://github.com/cswry/OSEDiff) and then perform adversarial distillation to retain generation capability despite reduced capacity.
+- **Adversarial Diffusion Compression (ADC).** We remove and prune redundant modules from one-step diffusion network [OSEDiff](https://github.com/cswry/OSEDiff) and then perform adversarial distillation to retain generation capability despite reduced capacity.
 - **Real-Time [Stable Diffusion](https://huggingface.co/stabilityai/stable-diffusion-2-1)-Based Image Super-Resolution.** AdcSR can super-resolve a 128×128 low-resolution image to a 512×512 output **in just 0.03 seconds** on an A100 GPU.
 - **Competitive Visual Quality.** Despite its significantly lower complexity (74% fewer parameters vs. [OSEDiff](https://github.com/cswry/OSEDiff)), AdcSR achieves **competitive visual quality and metrics** (PSNR, SSIM, LPIPS, DISTS, NIQE, MUSIQ, etc.) across multiple synthetic and real-world benchmarks.
 
