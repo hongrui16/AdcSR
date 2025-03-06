@@ -18,13 +18,25 @@
 
 ## Overview
 
-While deep neural networks (NN) significantly advance image compressed sensing (CS) by improving reconstruction quality, the necessity of training current CS NNs from scratch constrains their effectiveness and hampers rapid deployment. Although recent methods utilize pre-trained diffusion models for image reconstruction, they struggle with slow inference and restricted adaptability to CS. To tackle these challenges, this paper proposes **I**nvertible **D**iffusion **M**odels (**IDM**), a novel efficient, end-to-end diffusion-based CS method. IDM repurposes a large-scale diffusion sampling process as a reconstruction model, and fine-tunes it end-to-end to recover original images directly from CS measurements, moving beyond the traditional paradigm of one-step noise estimation learning. To enable such memory-intensive end-to-end fine-tuning, we propose a novel two-level invertible design to transform both (1) multi-step sampling process and (2) noise estimation U-Net in each step into invertible networks. As a result, most intermediate features are cleared during training to reduce up to 93.8% GPU memory. In addition, we develop a set of lightweight modules to inject measurements into noise estimator to further facilitate reconstruction. Experiments demonstrate that IDM outperforms existing state-of-the-art CS networks by up to 2.64dB in PSNR. Compared to the recent diffusion-based approach DDNM, our IDM achieves up to 10.09dB PSNR gain and 14.54 times faster inference. Code is available at https://github.com/Guaishou74851/IDM.
+### Highlights
 
-## Overview
+- **Adversarial Diffusion Compression (ADC).** We remove and prune redundant modules from a one-step diffusion network and then perform adversarial distillation to retain generation capability despite reduced capacity.
+- **Real-time Image Super-Resolution.** AdcSR can super-resolve a 128×128 low-resolution image to a 512×512 output **in just 0.03 seconds** on an A100 GPU.
+- **Competitive Visual Quality.** Despite its significantly lower complexity (74% fewer parameters vs. OSEDiff), AdcSR achieves **competitive visual quality and metrics** (PSNR, SSIM, LPIPS, DISTS, NIQE, MUSIQ, etc.) across multiple synthetic and real-world benchmarks.
+
+### Architecture
+
+1. Structural Compression
+   - **Removable modules** (VAE encoder, textual prompt extractor, cross-attention, time embeddings) are removed.
+   - **Prunable modules** (UNet, VAE decoder) are **channel-pruned** to balance efficiency and performance.
 
 ![teaser](figs/teaser.png)
 
-![framework](figs/framework.png)
+2. Two-Stage Training
+   1. **Pretrain the Pruned VAE Decoder** to ensure it can decode latent codes accurately.
+   2. **Adversarial Distillation** in the feature space to align the compressed network’s features with both the teacher (e.g., OSEDiff) and ground truth images.
+
+![method](figs/method.png)
 
 ## Environment
 
