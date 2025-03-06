@@ -30,13 +30,13 @@
    - **Removable modules** (VAE encoder, textual prompt extractor, cross-attention, time embeddings) are removed.
    - **Prunable modules** (UNet, VAE decoder) are **channel-pruned** to balance efficiency and performance.
 
-![teaser](figs/teaser.png)
+<img src="figs/teaser.png" alt="teaser" style="zoom:50%;" />
 
 2. Two-Stage Training
    1. **Pretrain the Pruned VAE Decoder** to ensure it can decode latent codes accurately.
    2. **Adversarial Distillation** in the feature space to align the compressed network’s features with both the teacher (e.g., OSEDiff) and ground truth images.
 
-![method](figs/method.png)
+<img src="figs/method" alt="method" style="zoom:50%;" />
 
 ## Environment
 
