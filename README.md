@@ -2,13 +2,13 @@
 
 [![icon](https://img.shields.io/badge/ArXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2411.13383) ![visitors](https://visitor-badge.laobi.icu/badge?page_id=Guaishou74851.AdcSR)
 
-[Bin Chen](https://scholar.google.com/citations?user=aZDNm98AAAAJ)<sup>1,3,\*</sup>,
-Gehui Li<sup>1,\*</sup>,
-[Rongyuan Wu](https://scholar.google.com/citations?user=A-U8zE8AAAAJ)<sup>2,3,\*</sup>,
-[Xindong Zhang](https://scholar.google.com/citations?user=q76RnqIAAAAJ)<sup>3</sup>,
-[Jie Chen](https://aimia-pku.github.io/)<sup>1,†</sup>,
-[Jian Zhang](https://jianzhang.tech/)<sup>1,†</sup>,
-and [Lei Zhang](https://www4.comp.polyu.edu.hk/~cslzhang/)<sup>2,3</sup>
+[Bin Chen](https://scholar.google.com/citations?user=aZDNm98AAAAJ)<sup>1,3,\*</sup>
+| Gehui Li<sup>1,\*</sup>
+| [Rongyuan Wu](https://scholar.google.com/citations?user=A-U8zE8AAAAJ)<sup>2,3,\*</sup>
+| [Xindong Zhang](https://scholar.google.com/citations?user=q76RnqIAAAAJ)<sup>3</sup>
+| [Jie Chen](https://aimia-pku.github.io/)<sup>1,†</sup>
+| [Jian Zhang](https://jianzhang.tech/)<sup>1,†</sup>
+| [Lei Zhang](https://www4.comp.polyu.edu.hk/~cslzhang/)<sup>2,3</sup>
 
 <sup>1</sup>*Peking University*, <sup>2</sup>*The Hong Kong Polytechnic University*, <sup>3</sup>*OPPO Research Institute*
 
