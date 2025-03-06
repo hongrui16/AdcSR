@@ -16,7 +16,7 @@
 
 ⭐ **If AdcSR is helpful to you, please star this repo. Thanks!** 🤗
 
-## Overview
+## 🌟 Overview
 
 ### Highlights
 
@@ -40,13 +40,13 @@
 
 <img src="figs/method.png" alt="method" />
 
-## Visual Results
+## 😍 Visual Results
 
-## Comparison with State-of-the-Arts
+### Comparison with State-of-the-Arts
 
 <img src="figs/comp.png" alt="comp" />
 
-## Installation
+## ⚙ Installation
 
 ```shell
 git clone https://github.com/Guaishou74851/AdcSR
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 chmod +x train.sh train_debug.sh test_debug.sh evaluate_debug.sh
 ```
 
-## Test  
+## ⚡ Test
 
 1. **Download test datasets** (`DIV2K-Val.zip`, `DRealSR.zip`, `RealSR.zip`) from [Google Drive](https://drive.google.com/drive/folders/1JBOxTOOWi6ietCRTTbhjg8ojHrals4dh?usp=sharing) or [PKU Disk](https://disk.pku.edu.cn/link/AAD499197CBF054392BC4061F904CC4026).
 2. **Unzip** them into `./testset/`, ensuring the structure:
@@ -80,14 +80,14 @@ chmod +x train.sh train_debug.sh test_debug.sh evaluate_debug.sh
    - Place your **low-resolution (LR)** images into `./testset/custom/`.
    - Run the same command with `--LR_dir=./testset/custom/`, and the model will perform **x4 super-resolution**.
 
-## Evaluation
+## 🍭 Evaluation
 
 Run the evaluation script (or modify and execute `./evaluate_debug.sh` for convenience):
 ```bash
 python evaluate.py --HR_dir=path_to_HR_images --SR_dir=path_to_SR_images
 ```
 
-## Train
+## 🔥 Train
 
 This repo provides code for **Stage 2** training (**adversarial distillation**). For **Stage 1** (pretraining the channel-pruned VAE decoder), refer to our paper and use the [Latent Diffusion Models](https://github.com/CompVis/latent-diffusion) repo.
 
@@ -103,11 +103,11 @@ This repo provides code for **Stage 2** training (**adversarial distillation**).
    ```
    The trained model will be saved in `./weight/`.
    
-## Acknowledgement
+## 🥰 Acknowledgement
 
 This project is built upon the codes of [Latent Diffusion Models](https://github.com/CompVis/latent-diffusion), [Diffusers](https://github.com/huggingface/diffusers), [BasicSR](https://github.com/XPixelGroup/BasicSR), and [OSEDiff](https://github.com/cswry/OSEDiff). We sincerely thank the authors of these repos for their significant contributions.
 
-## Citation
+## 🎓 Citation
 
 If you find our work helpful, please consider citing:
 
