@@ -16,8 +16,6 @@
 
 ⭐ **If AdcSR is helpful to you, please star this repo. Thanks!** 🤗
 
----
-
 ## Overview
 
 ### Highlights
@@ -25,8 +23,6 @@
 - **Adversarial Diffusion Compression (ADC).** We remove and prune redundant modules from the one-step diffusion network [OSEDiff](https://github.com/cswry/OSEDiff) and apply adversarial distillation to retain generative capabilities despite reduced capacity.
 - **Real-Time [Stable Diffusion](https://huggingface.co/stabilityai/stable-diffusion-2-1)-Based Image Super-Resolution.** AdcSR super-resolves a 128×128 image to 512×512 **in just 0.03s** on an A100 GPU.
 - **Competitive Visual Quality.** Despite 74% fewer parameters than [OSEDiff](https://github.com/cswry/OSEDiff), AdcSR achieves **high-quality results** across multiple benchmarks.
-
----
 
 ### Framework
 
@@ -44,17 +40,11 @@
 
 <img src="figs/method.png" alt="method" />
 
----
-
 ## Visual Results
-
----
 
 ## Comparison with State-of-the-Arts
 
 <img src="figs/comp.png" alt="comp" />
-
----
 
 ## Installation
 
@@ -67,8 +57,6 @@ pip install --upgrade pip
 pip install -r requirements.txt
 chmod +x train.sh train_debug.sh test_debug.sh evaluate_debug.sh
 ```
-
----
 
 ## Test  
 
@@ -92,16 +80,12 @@ chmod +x train.sh train_debug.sh test_debug.sh evaluate_debug.sh
    - Place your **low-resolution (LR)** images into `./testset/custom/`.
    - Run the same command with `--LR_dir=./testset/custom/`, and the model will perform **x4 super-resolution**.
 
----
-
 ## Evaluation
 
 Run the evaluation script (or modify and execute `./evaluate_debug.sh` for convenience):
 ```bash
 python evaluate.py --HR_dir=path_to_HR_images --SR_dir=path_to_SR_images
 ```
-
----
 
 ## Train
 
@@ -120,8 +104,6 @@ For **Stage 1** (pretraining the channel-pruned VAE decoder), refer to our paper
    CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.run --nproc_per_node=8 --master_port=23333 train.py
    ```
    The trained model will be saved in `./weight/`.
-
----
 
 ## Citation
 
