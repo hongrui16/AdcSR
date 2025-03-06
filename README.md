@@ -89,10 +89,8 @@ python evaluate.py --HR_dir=path_to_HR_images --SR_dir=path_to_SR_images
 
 ## Train
 
-This repo provides code for **Stage 2** training (**adversarial distillation**).
-For **Stage 1** (pretraining the channel-pruned VAE decoder), refer to our paper and use the [Latent Diffusion Models](https://github.com/CompVis/latent-diffusion) repo.
+This repo provides code for **Stage 2** training (**adversarial distillation**). For **Stage 1** (pretraining the channel-pruned VAE decoder), refer to our paper and use the [Latent Diffusion Models](https://github.com/CompVis/latent-diffusion) repo.
 
-### Training Steps
 1. **Download pretrained model weights** (`DAPE.pth`, `halfDecoder.ckpt`, `osediff.pkl`, `ram_swin_large_14m.pth`) from [Google Drive](https://drive.google.com/drive/folders/1JBOxTOOWi6ietCRTTbhjg8ojHrals4dh?usp=sharing) or [PKU Disk](https://disk.pku.edu.cn/link/AAD499197CBF054392BC4061F904CC4026), and place them in `./weight/pretrained/`.
 2. **Download the [LSDIR](https://huggingface.co/ofsoundof/LSDIR) dataset** and store it in your preferred location.
 3. **Modify the dataset path** in `config.yml`:
@@ -105,7 +103,7 @@ For **Stage 1** (pretraining the channel-pruned VAE decoder), refer to our paper
    ```
    The trained model will be saved in `./weight/`.
    
-## Acknowledgements  
+## Acknowledgement
 
 This project is built upon the codes of [Latent Diffusion Models](https://github.com/CompVis/latent-diffusion), [Diffusers](https://github.com/huggingface/diffusers), [BasicSR](https://github.com/XPixelGroup/BasicSR), and [OSEDiff](https://github.com/cswry/OSEDiff). We sincerely thank the authors of these repos for their significant contributions.
 
