@@ -104,6 +104,10 @@ For **Stage 1** (pretraining the channel-pruned VAE decoder), refer to our paper
    CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.run --nproc_per_node=8 --master_port=23333 train.py
    ```
    The trained model will be saved in `./weight/`.
+   
+## Acknowledgements  
+
+This project is built upon the codes of [Latent Diffusion Models](https://github.com/CompVis/latent-diffusion), [Diffusers](https://github.com/huggingface/diffusers), [BasicSR](https://github.com/XPixelGroup/BasicSR), and [OSEDiff](https://github.com/cswry/OSEDiff). We sincerely thank the authors of these repos for their significant contributions.
 
 ## Citation
 
