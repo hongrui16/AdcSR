@@ -38,13 +38,17 @@
    1. **Pretraining a Pruned VAE Decoder** to maintain its ability to decode latent representations.
    2. **Adversarial Distillation** to align compressed network features with the teacher model (e.g., [OSEDiff](https://github.com/cswry/OSEDiff)) and ground truth images.
 
-<img src="figs/method.png" alt="method" />
+<p align="center">
+   <img src="figs/method.png" alt="method" />
+</p>
 
 ## 😍 Visual Results
 
 ### Comparison with State-of-the-Arts
 
-<img src="figs/comp.png" alt="comp" />
+<p align="center">
+   <img src="figs/comp.png" alt="comp" />
+</p>
 
 ## ⚙ Installation
 
