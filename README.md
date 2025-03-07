@@ -1,3 +1,7 @@
+<p align="center">
+   <img src="figs/icon.png" alt="icon" width="200px"/>
+</p>
+
 # (CVPR 2025) Adversarial Diffusion Compression for Real-World Image Super-Resolution [PyTorch]
 
 [![icon](https://img.shields.io/badge/ArXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2411.13383) ![visitors](https://visitor-badge.laobi.icu/badge?page_id=Guaishou74851.AdcSR)
@@ -21,8 +25,8 @@
 ### Highlights
 
 - **Adversarial Diffusion Compression (ADC).** We remove and prune redundant modules from the one-step diffusion network [OSEDiff](https://github.com/cswry/OSEDiff) and apply adversarial distillation to retain generative capabilities despite reduced capacity.
-- **Real-Time [Stable Diffusion](https://huggingface.co/stabilityai/stable-diffusion-2-1)-Based Image Super-Resolution.** AdcSR super-resolves a 128×128 image to 512×512 **in just 0.03s** on an A100 GPU.
-- **Competitive Visual Quality.** Despite 74% fewer parameters than [OSEDiff](https://github.com/cswry/OSEDiff), AdcSR achieves **high-quality results** across multiple benchmarks.
+- **Real-Time [Stable Diffusion](https://huggingface.co/stabilityai/stable-diffusion-2-1)-Based Image Super-Resolution.** AdcSR super-resolves a 128×128 image to 512×512 **in just 0.03s 🚀** on an A100 GPU.
+- **Competitive Visual Quality.** Despite **74% fewer parameters 📉** than [OSEDiff](https://github.com/cswry/OSEDiff), AdcSR achieves **high-quality results** across multiple benchmarks.
 
 ### Framework
 
