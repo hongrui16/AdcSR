@@ -16,7 +16,7 @@ args = parser.parse_args()
 
 device = torch.device("cuda")
 
-from diffusers import StableDiffusionPipeline, ControlNetModel
+from diffusers import StableDiffusionPipeline
 model_id = "stabilityai/stable-diffusion-2-1-base"
 pipe = StableDiffusionPipeline.from_pretrained(model_id).to(device)
 
