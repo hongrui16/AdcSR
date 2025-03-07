@@ -35,7 +35,7 @@
    - **Prunable modules** (UNet, VAE decoder) are **channel-pruned** to optimize efficiency while preserving performance.
 
 <p align="center">
-   <img src="figs/teaser.png" alt="teaser" width="50%"/>
+   <img src="figs/teaser.png" alt="teaser" width="55%"/>
 </p>
 
 2. **Two-Stage Training**
