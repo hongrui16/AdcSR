@@ -44,7 +44,7 @@
 
 ## 😍 Visual Results
 
-### Comparison with State-of-the-Arts
+[<img src="figs/demo1.png" height="205px"/>](https://imgsli.com/MzU2MjU1) [<img src="figs/demo2.png" height="205px"/>](https://imgsli.com/MzU2MjU2) [<img src="figs/demo3.png" height="205px"/>](https://imgsli.com/MzU2MjU3)
 
 <p align="center">
    <img src="figs/comp.png" alt="comp" />
