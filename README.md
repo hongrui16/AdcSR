@@ -50,7 +50,7 @@
 
 [<img src="figs/demo1.png" height="240px"/>](https://imgsli.com/MzU2MjU1) [<img src="figs/demo2.png" height="240px"/>](https://imgsli.com/MzU2MjU2) [<img src="figs/demo3.png" height="240px"/>](https://imgsli.com/MzU2MjU3)
 
-[<img src="figs/demo4.png" height="240px"/>](https://imgsli.com/MzU2NTg4) [<img src="figs/demo5.png" height="240px"/>](https://imgsli.com/MzU2NTkw)
+[<img src="figs/demo4.png" height="242px"/>](https://imgsli.com/MzU2NTg4) [<img src="figs/demo5.png" height="242px"/>](https://imgsli.com/MzU2NTkw) [<img src="figs/demo6.png" height="242px"/>](https://imgsli.com/MzU2NTk1)
 
 <img src="figs/comp.png" alt="comp" width="840px" />
 
