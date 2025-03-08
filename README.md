@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="figs/icon.png" alt="icon" width="200px"/>
+   <img src="assets/icon.png" alt="icon" width="200px"/>
 </p>
 
 # (CVPR 2025) Adversarial Diffusion Compression for Real-World Image Super-Resolution [PyTorch]
@@ -35,7 +35,7 @@
    - **Prunable modules** (UNet, VAE decoder) are **channel-pruned** to optimize efficiency while preserving performance.
 
 <p align="center">
-   <img src="figs/teaser.png" alt="teaser" width="55%"/>
+   <img src="assets/teaser.png" alt="teaser" width="55%"/>
 </p>
 
 2. **Two-Stage Training**
@@ -43,16 +43,16 @@
    2. **Adversarial Distillation** to align compressed network features with the teacher model (e.g., [OSEDiff](https://github.com/cswry/OSEDiff)) and ground truth images.
 
 <p align="center">
-   <img src="figs/method.png" alt="method" />
+   <img src="assets/method.png" alt="method" />
 </p>
 
 ## 😍 Visual Results
 
-[<img src="figs/demo1.png" height="240px"/>](https://imgsli.com/MzU2MjU1) [<img src="figs/demo2.png" height="240px"/>](https://imgsli.com/MzU2MjU2) [<img src="figs/demo3.png" height="240px"/>](https://imgsli.com/MzU2MjU3)
+[<img src="assets/demo1.png" height="240px"/>](https://imgsli.com/MzU2MjU1) [<img src="assets/demo2.png" height="240px"/>](https://imgsli.com/MzU2MjU2) [<img src="assets/demo3.png" height="240px"/>](https://imgsli.com/MzU2MjU3)
 
-[<img src="figs/demo4.png" height="242px"/>](https://imgsli.com/MzU2NTg4) [<img src="figs/demo5.png" height="242px"/>](https://imgsli.com/MzU2NTkw) [<img src="figs/demo6.png" height="242px"/>](https://imgsli.com/MzU2NTk1)
+[<img src="assets/demo4.png" height="242px"/>](https://imgsli.com/MzU2NTg4) [<img src="assets/demo5.png" height="242px"/>](https://imgsli.com/MzU2NTkw) [<img src="assets/demo6.png" height="242px"/>](https://imgsli.com/MzU2NTk1)
 
-<img src="figs/comp.png" alt="comp" width="840px" />
+<img src="assets/comp.png" alt="comp" width="840px" />
 
 ## ⚙ Installation
 
