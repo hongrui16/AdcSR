@@ -52,6 +52,8 @@
 
 [<img src="assets/demo4.png" height="242px"/>](https://imgsli.com/MzU2NTg4) [<img src="assets/demo5.png" height="242px"/>](https://imgsli.com/MzU2NTkw) [<img src="assets/demo6.png" height="242px"/>](https://imgsli.com/MzU2NTk1)
 
+https://github.com/user-attachments/assets/1211cefa-8704-47f5-82cd-ec4ef084b9ec
+
 <img src="assets/comp.png" alt="comp" width="840px" />
 
 ## ⚙ Installation
