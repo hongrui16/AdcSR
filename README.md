@@ -31,7 +31,7 @@
 ### Framework
 
 1. **Structural Compression**
-   - **Removable modules** (VAE encoder, textual prompt extractor, cross-attention, time embeddings) are eliminated.
+   - **Removable modules** (VAE encoder, text prompt extractor, cross-attention, time embeddings) are eliminated.
    - **Prunable modules** (UNet, VAE decoder) are **channel-pruned** to optimize efficiency while preserving performance.
 
 <p align="center">
