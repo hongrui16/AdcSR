@@ -20,7 +20,7 @@
 
 ⭐ **If AdcSR is helpful to you, please star this repo. Thanks!** 🤗
 
-## 🌟 Overview
+## 📝 Overview
 
 ### Highlights
 
