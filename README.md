@@ -63,7 +63,7 @@ https://github.com/user-attachments/assets/1211cefa-8704-47f5-82cd-ec4ef084b9ec
 ## ⚙ Installation
 
 ```shell
-git clone https://github.com/Guaishou74851/AdcSR
+git clone https://github.com/Guaishou74851/AdcSR.git
 cd AdcSR
 conda create -n AdcSR python=3.10
 conda activate AdcSR
