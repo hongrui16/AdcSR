@@ -14,7 +14,7 @@
 | [Jian Zhang](https://jianzhang.tech/)<sup>1,†</sup>
 | [Lei Zhang](https://www4.comp.polyu.edu.hk/~cslzhang/)<sup>2,3</sup>
 
-<sup>1</sup> *Peking University Shenzhen Graduate School*, <sup>2</sup> *The Hong Kong Polytechnic University*, <sup>3</sup> *OPPO Research Institute*
+<sup>1</sup> *School of Electronic and Computer Engineering, Peking University*, <sup>2</sup> *The Hong Kong Polytechnic University*, <sup>3</sup> *OPPO Research Institute*
 
 <sup>*</sup> Equal Contribution. <sup>†</sup> Corresponding Authors.
 
