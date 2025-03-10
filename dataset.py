@@ -2,10 +2,10 @@ import torch, random, time, cv2, os, math, glob
 import torch.nn.functional as F
 import os.path as osp
 import numpy as np
-from degradations import circular_lowpass_kernel, random_mixed_kernels, random_add_gaussian_noise_pt, random_add_poisson_noise_pt
-from basicsr.data.transforms import augment, paired_random_crop
-from basicsr.utils import FileClient, get_root_logger, imfrombytes, img2tensor, DiffJPEG
-from basicsr.utils.img_process_util import filter2D
+from bsr.degradations import circular_lowpass_kernel, random_mixed_kernels, random_add_gaussian_noise_pt, random_add_poisson_noise_pt
+from bsr.transforms import augment, paired_random_crop
+from bsr.utils import FileClient, get_root_logger, imfrombytes, img2tensor, DiffJPEG
+from bsr.utils.img_process_util import filter2D
 
 class RealESRGANDataset(torch.utils.data.Dataset):
     def __init__(self, opt, bsz):
