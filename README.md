@@ -74,7 +74,7 @@ chmod +x train.sh train_debug.sh test_debug.sh evaluate_debug.sh
 
 ## ⚡ Test
 
-1. **Download test datasets** (`DIV2K-Val.zip`, `DRealSR.zip`, `RealSR.zip`) from [Google Drive](https://drive.google.com/drive/folders/1JBOxTOOWi6ietCRTTbhjg8ojHrals4dh?usp=sharing) or [PKU Disk](https://disk.pku.edu.cn/link/AAD499197CBF054392BC4061F904CC4026).
+1. **Download test datasets** (`DIV2K-Val.zip`, `DRealSR.zip`, `RealSR.zip`) from [Hugging Face](https://huggingface.co/Guaishou74851/AdcSR) or [PKU Disk](https://disk.pku.edu.cn/link/AAD499197CBF054392BC4061F904CC4026).
 2. **Unzip** them into `./testset/`, ensuring the structure:
    ```
    ./testset/DIV2K-Val/LR/xxx.png
@@ -105,7 +105,7 @@ python evaluate.py --HR_dir=path_to_HR_images --SR_dir=path_to_SR_images
 
 This repo provides code for **Stage 2** training (**adversarial distillation**). For **Stage 1** (pretraining the channel-pruned VAE decoder), refer to our paper and use the code of [Latent Diffusion Models](https://github.com/CompVis/latent-diffusion) repo.
 
-1. **Download pretrained model weights** (`DAPE.pth`, `halfDecoder.ckpt`, `osediff.pkl`, `ram_swin_large_14m.pth`) from [Google Drive](https://drive.google.com/drive/folders/1JBOxTOOWi6ietCRTTbhjg8ojHrals4dh?usp=sharing) or [PKU Disk](https://disk.pku.edu.cn/link/AAD499197CBF054392BC4061F904CC4026), and place them in `./weight/pretrained/`.
+1. **Download pretrained model weights** (`DAPE.pth`, `halfDecoder.ckpt`, `osediff.pkl`, `ram_swin_large_14m.pth`) from [Hugging Face](https://huggingface.co/Guaishou74851/AdcSR) or [PKU Disk](https://disk.pku.edu.cn/link/AAD499197CBF054392BC4061F904CC4026), and place them in `./weight/pretrained/`.
 2. **Download the [LSDIR](https://huggingface.co/ofsoundof/LSDIR) dataset** and store it in your preferred location.
 3. **Modify the dataset path** in `config.yml`:
    ```yaml
