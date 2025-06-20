@@ -1,3 +1,9 @@
+import os
+os.environ.pop("MPLBACKEND", None)  # 移除 notebook backend
+
+import matplotlib
+matplotlib.use('Agg')  # 或者 'pdf', 'svg', 'Agg' 都可以
+
 import torch, os, glob, copy
 import torch.nn.functional as F
 import numpy as np
@@ -5,6 +11,7 @@ from PIL import Image
 from argparse import ArgumentParser
 from torchvision import transforms
 from model import Net
+
 
 parser = ArgumentParser()
 parser.add_argument("--epoch", type=int, default=200)
@@ -63,8 +70,11 @@ with torch.no_grad():
     for i, path in enumerate(test_LR_paths):
         LR = Image.open(path).convert("RGB")
         LR = transforms.ToTensor()(LR).to(device).unsqueeze(0) * 2 - 1
+        LR = F.interpolate(LR, size=(h - h % 2, w - w % 2), mode='bilinear', align_corners=False)
+
         SR = model(LR)
         SR = (SR - SR.mean(dim=[2,3],keepdim=True)) / SR.std(dim=[2,3],keepdim=True) \
              * LR.std(dim=[2,3],keepdim=True) + LR.mean(dim=[2,3],keepdim=True)
         SR = transforms.ToPILImage()((SR[0] / 2 + 0.5).clamp(0, 1).cpu())
-        SR.save(os.path.join(args.SR_dir, os.path.basename(path)))
+        new_name = os.path.basename(path).split('.')[-2] + "-AdcSR.png"
+        SR.save(os.path.join(args.SR_dir, new_name))
