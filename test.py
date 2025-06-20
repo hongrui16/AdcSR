@@ -70,6 +70,8 @@ with torch.no_grad():
     for i, path in enumerate(test_LR_paths):
         LR = Image.open(path).convert("RGB")
         LR = transforms.ToTensor()(LR).to(device).unsqueeze(0) * 2 - 1
+        h, w = LR.shape[2:]
+
         LR = F.interpolate(LR, size=(h - h % 2, w - w % 2), mode='bilinear', align_corners=False)
 
         SR = model(LR)
