@@ -3,7 +3,7 @@ os.environ.pop("MPLBACKEND", None)  # 移除 notebook backend
 
 import matplotlib
 matplotlib.use('Agg')  # 或者 'pdf', 'svg', 'Agg' 都可以
-
+import math
 import torch, os, glob, copy
 import torch.nn.functional as F
 import numpy as np
@@ -65,18 +65,43 @@ test_LR_paths = list(sorted(glob.glob(os.path.join(args.LR_dir, "*.png"))))
 test_HR_paths = list(sorted(glob.glob(os.path.join(args.HR_dir, "*.png"))))
 
 os.makedirs(args.SR_dir, exist_ok=True)
-
 with torch.no_grad():
     for i, path in enumerate(test_LR_paths):
         LR = Image.open(path).convert("RGB")
         LR = transforms.ToTensor()(LR).to(device).unsqueeze(0) * 2 - 1
-        h, w = LR.shape[2:]
 
-        LR = F.interpolate(LR, size=(h - h % 2, w - w % 2), mode='bilinear', align_corners=False)
+        # 原始尺寸
+        h_raw, w_raw = LR.shape[2:]
 
-        SR = model(LR)
-        SR = (SR - SR.mean(dim=[2,3],keepdim=True)) / SR.std(dim=[2,3],keepdim=True) \
-             * LR.std(dim=[2,3],keepdim=True) + LR.mean(dim=[2,3],keepdim=True)
-        SR = transforms.ToPILImage()((SR[0] / 2 + 0.5).clamp(0, 1).cpu())
+        # 调整到 64 的倍数
+        h_resized = math.floor(h_raw / 64) * 64
+        w_resized = math.floor(w_raw / 64) * 64
+        if h_resized != h_raw or w_resized != w_raw:
+            print(f"🛠️ Resizing input from ({h_raw}, {w_raw}) to ({h_resized}, {w_resized})")
+        LR_resized = F.interpolate(LR, size=(h_resized, w_resized), mode='bilinear', align_corners=False)
+
+        # 超分推理
+        SR = model(LR_resized)  # [1, 3, h_out, w_out]
+
+        # 颜色恢复
+        SR = (SR - SR.mean(dim=[2, 3], keepdim=True)) / SR.std(dim=[2, 3], keepdim=True) \
+             * LR.std(dim=[2, 3], keepdim=True) + LR.mean(dim=[2, 3], keepdim=True)
+
+        SR = (SR[0] / 2 + 0.5).clamp(0, 1).cpu()
+
+        # ✅ 自动计算 scale factor
+        h_out, w_out = SR.shape[1:]
+        scale_h = h_out / h_resized
+        scale_w = w_out / w_resized
+
+        final_h = round(h_raw * scale_h)
+        final_w = round(w_raw * scale_w)
+        print(f"📐 Upscaling output to ({final_h}, {final_w}) based on actual model output")
+
+        # 最终 resize
+        SR = TF.resize(SR, size=[final_h, final_w], interpolation=TF.InterpolationMode.BILINEAR)
+
+        # 保存
         new_name = os.path.basename(path).split('.')[-2] + "-AdcSR.png"
-        SR.save(os.path.join(args.SR_dir, new_name))
+        transforms.ToPILImage()(SR).save(os.path.join(args.SR_dir, new_name))
+
